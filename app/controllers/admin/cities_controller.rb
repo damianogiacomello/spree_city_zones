@@ -5,7 +5,7 @@ class Admin::CitiesController < Admin::ResourceController
   def index
     respond_with(@collection) do |format|
       format.html
-      format.js  { render :partial => 'city_list.html.erb' }
+      format.js  { render :partial => 'city_list' }
     end
   end
 

@@ -1,10 +1,10 @@
 <%= render :partial => 'admin/shared/configuration_menu' %>
 
-<h1><%= t("editing_state") %></h1>
+<h1><%= t(:editing_city) %></h1>
 
-<%= render 'shared/error_messages', :target => @state %>
+<%= render 'shared/error_messages', :target => @city %>
 
-<%= form_for([:admin,@country,@state,@city], :html => { :method => :put }) do |f| %>
+<%= form_for([:admin, @country, @state, @city], :html => { :method => :put }) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <%= render :partial => "admin/shared/cities_edit_resource_links" %>
+  <%= render :partial => "admin/shared/edit_cities_links" %>
 <% end %>

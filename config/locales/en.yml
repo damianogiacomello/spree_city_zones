@@ -1,3 +1,7 @@
-en:
+it:
   new_city: "New City"
   add_city: "Add City"
+  editing_city: "Edit City"
+  cities: "Cities"
+  cities_description: "List of cities used in the different calculations."
+  city_based: "city based"

@@ -2,7 +2,7 @@
 
 <%= render 'shared/error_messages', :target => @city %>
 
-<%= form_for([:admin,@country,@state,@city]) do |f| %>
+<%= form_for([:admin, @country, @state, @city]) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <%= render :partial => "admin/shared/cities_new_resource_links" %>
+  <%= render :partial => "admin/shared/new_cities_links" %>
 <% end %>

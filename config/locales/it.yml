@@ -1,3 +1,7 @@
-en:
+it:
   new_city: "Nuova Città"
   add_city: "Aggiungi Città"
+  editing_city: "Modifica Città"
+  cities: "Città"
+  cities_description: "Elenco di città utilizzate nei diversi calcoli."
+  city_based: "sulla base di una città"
