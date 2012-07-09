@@ -7,3 +7,13 @@ Deface::Override.new(:name => "add_cities_to_admin_configuration_menu",
                   :virtual_path => "admin/shared/_configuration_menu",
                   :insert_bottom => "[data-hook='admin_configurations_sidebar_menu']",
                   :partial => "admin/shared/cities_admin_configurations_menu")
+                  
+Deface::Override.new(:name => "add_cities_to_ship",
+                  :virtual_path => "checkout/address",
+                  :replace => "[id='scity']",
+                  :partial => "cities/ship_field")
+                  
+Deface::Override.new(:name => "add_cities_to_bill",
+                  :virtual_path => "checkout/address",
+                  :replace => "[id='bcity']",
+                  :partial => "cities/bill_field")
