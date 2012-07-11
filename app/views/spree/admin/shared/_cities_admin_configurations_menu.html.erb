@@ -1,0 +1,1 @@
+<%= configurations_sidebar_menu_item t(:cities), admin_country_state_cities_path(Spree::Config[:default_country_id], State.where({:country_id => Spree::Config[:default_country_id]}).order("name ASC").first) %>

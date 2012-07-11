@@ -1,21 +1,23 @@
-<table class="index" id='listing_citys'>
+<table class="index" id='listing_cities' data-hook>
   <thead>
-    <tr>
-      <th><%= t("name") %></th>
+    <tr data-hook="cities_header">
+      <th><%= t(:name) %></th>
+      <th><%= t(:geoname_id) %></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% @cities.each do |city|
-    	state = city.state
-    	country = @state.country
-     %>
-      <tr id="<%= dom_id city %>">
-        <td><%=city.name %></td>
+         @edit_url = admin_country_state_city_path(@country, @state, city)
+         @delete_url = admin_country_state_city_path(@country, @state, city)
+    %>
+      <tr id="<%= dom_id city %>" data-hook="cities_row">
+        <td><%= city.name %></td>
+        <td><%= city.geoname_id %></td>
         <td class="actions">
-          <%= link_to_with_icon 'edit', t("edit"), edit_admin_country_state_city_url(country, state, city), :class => 'edit' %>
+          <%= link_to_with_icon 'edit', t(:edit), edit_admin_country_state_city_url(@country, @state, city), :class => 'edit' %>
           &nbsp;
-          <%= link_to 'Delete', admin_country_state_city_url(country, state, city), :method => 'delete' %>
+          <%= link_to_delete city %>
         </td>
       </tr>
     <% end %>
@@ -24,9 +26,7 @@
     <% end %>
   </tbody>
 </table>
-<div id="new_city"></div>
-<p>
-  <%= button_link_to t("new_city"), new_admin_country_state_city_url(@country,@state), {
-                                                                             :icon => 'add',
-                                                                              :id => 'new_city'} %>
+<div id="new_city" data-hook></div>
+<p data-hook="buttons">
+  <%= button_link_to t(:new_city), new_admin_country_state_city_url(@country, @state), {:remote => true, :icon => 'add', :id => 'new_city_link'} %>
 </p>

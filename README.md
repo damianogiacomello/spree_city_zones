@@ -1,15 +1,24 @@
 SpreeCityZones
 ==============
 
-Ability to have cities defined for states and then used for zones.  The city tax rate will override a state tax rate if defined.
+Spree extension providing tax zones based on city. Ability to have cities defined for states and then used for zones.
+
+Installation
+------------
+1. Add the following to your Gemfile
+<pre>
+  gem 'spree_city_zones', :git => 'git://github.com/damianogiacomello/spree_city_zones.git', :branch => '1-0-stable'
+</pre>
+2. Run `bundle install`
+3. To copy and apply migrations run:
+<pre>
+	rails g spree_city_zones:install
+</pre>
+
+Usage
+-----
+
+COMING SOON
 
 
-Example
-=======
-
-If you define a California tax rate of .0825 and another city tax rate for Hollywood of .0925....
-
-	State-CA, City- Hollywood, rate would be .0925
-	State-CA, City- Irvine, rate would be .0825
-
-Copyright (c) 2011 [name of extension creator], released under the New BSD License
+Copyright (c) 2011 [Damiano Giacomello], released under the New BSD License

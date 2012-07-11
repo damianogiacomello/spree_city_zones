@@ -3,10 +3,8 @@ module Spree
     before_filter :load_cities, :except => [:index]
 
     protected
-
     def load_cities
       @cities = City.order(:name)
     end
-
   end
 end

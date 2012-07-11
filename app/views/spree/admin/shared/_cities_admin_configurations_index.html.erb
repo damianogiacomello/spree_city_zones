@@ -1,0 +1,4 @@
+<tr>
+	<td><%= link_to t(:cities), admin_country_state_cities_path(Spree::Config[:default_country_id], State.where({:country_id => Spree::Config[:default_country_id]}).order("name ASC").first) %></td>
+	<td><%= t(:cities_description) %></td>
+</tr>

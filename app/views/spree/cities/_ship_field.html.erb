@@ -1,0 +1,21 @@
+<%= javascript_include_tag '/cities' %>
+
+<% have_cities = !@order.ship_address.country.cities.empty? %>
+<%= ship_form.label :city, t(:city) %><span class="req">*</span>
+<noscript>
+	<%= ship_form.text_field :city_name, :class => 'required' %>
+</noscript>
+<% city_elements = [
+	ship_form.collection_select(:city_id, @order.ship_address.country.cities,
+	:id, :name,
+	{:include_blank => true},
+	{:class => have_cities ? 'required' : 'hidden',
+		:disabled => !have_cities}) +
+		ship_form.text_field(:city_name,
+		:class => !have_cities ? 'required' : 'hidden',
+		:disabled => have_cities)
+		].join.gsub('"', "'").gsub("\n", "")
+		%>
+		<%= javascript_tag do -%>
+		document.write("<%== city_elements %>");
+<% end %>

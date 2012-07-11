@@ -22,14 +22,11 @@ module Spree
           zone_member.zoneable_id == address.country_id
         when "Spree::City"
           result = false
-          address_city = find_city(address)
-
           if address_city.present?
-            result = (zone_member.zoneable_id == address_city.id)
+            result = (zone_member.zoneable_id == address_city.id)          
           end
-
           result
-        when "Spree::State"
+        when "State"
           zone_member.zoneable_id == address.state_id
         else
           false
@@ -69,11 +66,11 @@ module Spree
       address_city = nil
       if address.city.present? && address.state.present?
         address_city = City.find(
-          :first,
+          :first, 
           :conditions => [
-            'UPPER(name) = :name and state_id = :state_id',
+            'UPPER(name) = :name and state_id = :state_id', 
             { :name => address.city.upcase, :state_id => address.state.id }
-        ]
+          ]
         )
       end
       address_city
