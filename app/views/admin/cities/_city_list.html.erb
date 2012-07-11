@@ -8,8 +8,8 @@
   </thead>
   <tbody>
     <% @cities.each do |city|
-         @edit_url = admin_country_state_city_path(@country, @state, city)
-         @delete_url = admin_country_state_city_path(@country, @state, city)
+         @edit_url = admin_country_state_city_url(@country, @state, city)
+         @delete_url = admin_country_state_city_url(@country, @state, city)
     %>
       <tr id="<%= dom_id city %>" data-hook="cities_row">
         <td><%= city.name %></td>
@@ -17,7 +17,7 @@
         <td class="actions">
           <%= link_to_with_icon 'edit', t(:edit), edit_admin_country_state_city_url(@country, @state, city), :class => 'edit' %>
           &nbsp;
-          <%= link_to_delete city %>
+          <%= link_to_delete city, {:url => admin_country_state_city_url(@country, @state, city) } %>
         </td>
       </tr>
     <% end %>
