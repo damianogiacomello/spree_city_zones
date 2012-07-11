@@ -5,3 +5,22 @@ it:
   cities: "Città"
   cities_description: "Elenco di città utilizzate nei diversi calcoli."
   city_based: "sulla base di una città"
+  city_id: 'Città'
+  city_name: 'Città'
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "Non posso salvare questo %{model}: 1 errore"
+          other: "Non posso salvare questo %{model}: %{count} errori."
+        body: "Per favore ricontrolla i seguenti campi:"
+      attributes:
+        address:
+          city_id: 'Città'
+          city_name: 'Città'
+        bill_address:
+          city_id: 'Città'
+          city_name: 'Città'
+        ship_address:
+          city_id: 'Città'
+          city_name: 'Città'
