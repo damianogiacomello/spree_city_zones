@@ -17,7 +17,7 @@
         <td class="actions">
           <%= link_to_with_icon 'edit', t(:edit), edit_admin_country_state_city_url(@country, @state, city), :class => 'edit' %>
           &nbsp;
-          <%= link_to_delete city %>
+          <%= link_to_delete city, {:url => admin_country_state_city_url(@country, @state, city) } %>
         </td>
       </tr>
     <% end %>
