@@ -17,3 +17,8 @@ Deface::Override.new(:name => "add_cities_to_bill",
                   :virtual_path => "checkout/address",
                   :replace => "[id='bcity']",
                   :partial => "cities/bill_field")
+                  
+Deface::Override.new(:name => "add_cities_to_user_form_order",
+                  :virtual_path => "admin/order/_user_form",
+                  :insert_after => "[data-hook='customer_guest']",
+                  :partial => "admin/order/_cities")
