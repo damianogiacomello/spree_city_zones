@@ -8,6 +8,11 @@ Spree::Core::Engine.routes.prepend do
         resources :cities
       end
     end
+    resources :states do
+      collection do
+        get :list
+      end
+    end
     resources :cities
   end
 end
