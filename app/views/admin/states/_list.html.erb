@@ -1,0 +1,15 @@
+<% if @states.empty? %>
+<strong><%= t(:empty_state) %></strong>
+<% else %>
+<%= label_tag :state, t(:state) %>
+<select id="state" class='observe_field' data-base-url="<%=admin_cities_path(:format => :js)%>?country_id=<%= @country.id %>&state_id=" data-update="#city-list">
+	<%= options_from_collection_for_select(@states, :id, :name, @state.id) %>
+</select>
+<% end %>
+<%= javascript_tag do -%>
+	<% if @states.empty? %>
+	$("#city-list").html("");
+	<% else %>
+	$("#city-list").html("<%= escape_javascript(render :partial => 'admin/cities/city_list') %>");
+	<% end %>
+<% end -%>

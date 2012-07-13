@@ -26,7 +26,7 @@ class Admin::CitiesController < Admin::ResourceController
   def load_data
     @countries = Country.order(:name)
     @country = Country.find(params[:country_id])
-    @states = State.order(:name)
+    @states = @country.states.order(:name)
     @state = State.find(params[:state_id])
   end
 end

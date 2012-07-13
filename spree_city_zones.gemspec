@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('spree_core', '~> 0.70.5')
-  s.add_dependency('geocoder')
+  s.add_dependency 'spree_core'
+  s.add_dependency 'geocoder'
+  
   s.add_development_dependency 'rspec-rails'
 end

@@ -1,6 +1,6 @@
 var update_city = function(state) {
-  var state        = $('span#' + state + 'state :only-child').val();
-  var cities         = city_mapper[state];
+  var city        = $('span#' + state + 'state select').val();
+  var cities         = city_mapper[city];
 
   var city_select = $('span#' + state + 'city select');
   var city_input = $('span#' + state + 'city input');

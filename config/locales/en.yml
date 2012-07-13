@@ -3,6 +3,7 @@ it:
   add_city: "Add City"
   editing_city: "Edit City"
   cities: "Cities"
+  empty_state: "No province entered for the selected state"
   cities_description: "List of cities used in the different calculations."
   city_based: "city based"
   city_id: "City"
